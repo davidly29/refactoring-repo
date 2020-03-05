@@ -21,7 +21,7 @@ public class Menu extends JFrame{
 		JLabel customerIDLabel, passwordLabel;
 		JTextField customerIDTextField, passwordTextField;
 	Container content;
-		Customer e;
+		Customer loggedInCustomer;
 
 
 	 JPanel panel2;
@@ -133,14 +133,17 @@ public class Menu extends JFrame{
 						add.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
 								secondaryFrame.dispose();
+								boolean passwordCheck = false;
 
-								 password = JOptionPane.showInputDialog(mainFrame, "Enter 7 character Password;");
-								
-								 if(password.length() < 7)
-								    {
-								    	JOptionPane.showMessageDialog(null, null, "Password must be at least 7 characters long", JOptionPane.OK_OPTION);
-								    }
+								while (!passwordCheck) {
+									password = JOptionPane.showInputDialog(mainFrame, "Enter 7 character Password;");
 
+									if (password.length() < 7) {
+										JOptionPane.showMessageDialog(null, "Password must be at least 7 characters long", "Password Error", JOptionPane.OK_OPTION);
+									}else {
+										passwordCheck = true;
+									}
+								}
 								
 								
 								
@@ -226,73 +229,58 @@ public class Menu extends JFrame{
 					//if user selects CUSTOMER ---------------------------------------------------------------------------------------- 
 					if(user.equals("Customer")	)
 					{
-						boolean loop = true, loop2 = true;
+						boolean customerParam = false;
+						boolean customerPass = false;
 						boolean cont = false;
-						boolean found = false;
 						Customer customer = null;
-					    while(loop)
+
+
+						while (!customerParam) {
+                            Object customerID = JOptionPane.showInputDialog(mainFrame, "Enter Customer ID:");
+
+                            for (Customer aCustomer : customerList) {
+                                if (aCustomer.getCustomerID().equals(customerID))//search customer list for matching customer ID
+                                {
+                                    customerParam = true;
+                                    customer = aCustomer;
+                                } else {
+                                    int reply = JOptionPane.showConfirmDialog(null, "User not found. Try again?", "Not Found", JOptionPane.YES_NO_OPTION);
+                                    if (reply == JOptionPane.YES_OPTION) {
+
+                                    } else if (reply == JOptionPane.NO_OPTION) {
+                                        customerParam = true;
+                                        mainFrame.dispose();
+                                        menuStart();
+                                    }
+                                }
+                            }
+                        }
+
+					    while(!customerPass)
 					    {
-					    Object customerID = JOptionPane.showInputDialog(mainFrame, "Enter Customer ID:");
-					    
-					    for (Customer aCustomer: customerList){
-					    	
-					    	if(aCustomer.getCustomerID().equals(customerID))//search customer list for matching customer ID
-					    	{
-					    		found = true;
-					    		customer = aCustomer;
-					    	}					    	
-					    }
-					    
-					    if(found == false)
-					    {
-					    	int reply  = JOptionPane.showConfirmDialog(null, "User not found. Try again?", "Not Found", JOptionPane.YES_NO_OPTION);
-					    	if (reply == JOptionPane.YES_OPTION) {
-					    		loop = true;
-					    	}
-					    	else if(reply == JOptionPane.NO_OPTION)
-					    	{
-					    		mainFrame.dispose();
-					    		loop = false;
-					    		loop2 = false;
-					    		menuStart();
-					    	}
-					    }
-					    else
-					    {
-					    	loop = false;
-					    }
-					   
-					    }
-					    
-					    while(loop2)
-					    {
-					    	Object customerPassword = JOptionPane.showInputDialog(mainFrame, "Enter Customer Password;");
+					    	Object customerPassword = JOptionPane.showInputDialog(mainFrame, "Enter Customer Password");
 					    	
 					    	   if(!customer.getPassword().equals(customerPassword))//check if customer password is correct
 							    {
 							    	int reply  = JOptionPane.showConfirmDialog(null, "Incorrect password. Try again?", "Password Error", JOptionPane.YES_NO_OPTION);
 							    	if (reply == JOptionPane.YES_OPTION) {
-							    		
 							    	}
 							    	else if(reply == JOptionPane.NO_OPTION){
 							    		mainFrame.dispose();
-							    		loop2 = false;
 							    		menuStart();
 							    	}
-							    }
-					    	   else
-					    	   {
-					    		   loop2 =false;
-					    		   cont = true;
+							    } else {
+					    	   customerPass = true;
+					    	   cont = true;
 					    	   }
 					    }
-					    	
+
 					    if(cont)
 					    {
 						mainFrame.dispose();
-					    	loop = false;
-					    	customer(customer);				    
-					    }				    
+					    	// loop = false;
+					    	customer(customer);
+					    }
 					}
 					//-----------------------------------------------------------------------------------------------------------------------
 				}
@@ -1248,7 +1236,7 @@ public class Menu extends JFrame{
 	public void customer(Customer e1)
 	{	
 		mainFrame = new JFrame("Customer Menu");
-		e1 = e;
+		loggedInCustomer = e1;
 		mainFrame.setSize(400, 300);
 		mainFrame.setLocation(200, 200);
 		mainFrame.addWindowListener(new WindowAdapter() {
@@ -1256,10 +1244,10 @@ public class Menu extends JFrame{
 		});          
 		mainFrame.setVisible(true);
 		
-		if(e.getAccounts().size() == 0)
+		if(loggedInCustomer.getAccounts().size() <= 0)
 		{
 			JOptionPane.showMessageDialog(mainFrame, "This customer does not have any accounts yet. \n An admin must create an account for this customer \n for them to be able to use customer functionality. " ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
-			mainFrame.dispose();
+//			mainFrame.dispose();
 			menuStart();
 		}
 		else
@@ -1277,18 +1265,18 @@ public class Menu extends JFrame{
 		buttonPanel.add(continueButton);
 		
 		JComboBox<String> box = new JComboBox<String>();
-	    for (int i =0; i < e.getAccounts().size(); i++)
+	    for (int i = 0; i < loggedInCustomer.getAccounts().size(); i++)
 	    {
-	     box.addItem(e.getAccounts().get(i).getNumber());
+	     box.addItem(loggedInCustomer.getAccounts().get(i).getNumber());
 	    }
 		
 	    
 	   
-	    for(int i = 0; i<e.getAccounts().size(); i++)
+	    for(int i = 0; i< loggedInCustomer.getAccounts().size(); i++)
 	    {
-	    	if(e.getAccounts().get(i).getNumber() == box.getSelectedItem() )
+	    	if(loggedInCustomer.getAccounts().get(i).getNumber() == box.getSelectedItem() )
 	    	{
-	    		acc = e.getAccounts().get(i);
+	    		acc = loggedInCustomer.getAccounts().get(i);
 	    	}
 	    }
 	    
@@ -1401,7 +1389,7 @@ public class Menu extends JFrame{
 				returnButton.addActionListener(new ActionListener(  ) {
 					public void actionPerformed(ActionEvent ae) {
 						mainFrame.dispose();
-					customer(e);				
+					customer(loggedInCustomer);
 					}		
 			     });										
 			}	
@@ -1425,7 +1413,7 @@ public class Menu extends JFrame{
 					{
 						JOptionPane.showMessageDialog(mainFrame, "Pin entered incorrectly 3 times. ATM card locked."  ,"Pin",  JOptionPane.INFORMATION_MESSAGE);
 						((CustomerCurrentAccount) acc).getAtm().setValid(false);
-						customer(e); 
+						customer(loggedInCustomer);
 						loop = false;
 						on = false;
 					}
@@ -1507,7 +1495,7 @@ public class Menu extends JFrame{
 						{
 							JOptionPane.showMessageDialog(mainFrame, "Pin entered incorrectly 3 times. ATM card locked."  ,"Pin",  JOptionPane.INFORMATION_MESSAGE);
 							((CustomerCurrentAccount) acc).getAtm().setValid(false);
-							customer(e); 
+							customer(loggedInCustomer);
 							loop = false;
 							on = false;
 						}
