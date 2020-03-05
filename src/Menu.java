@@ -181,8 +181,6 @@ public class Menu extends JFrame{
 					//if user select ADMIN----------------------------------------------------------------------------------------------
 					if(user.equals("Administrator")	)
 					{
-						boolean admin = false;
-						boolean pass = false;
 						boolean cont = true;
 
 					    Object adminUsername = JOptionPane.showInputDialog(mainFrame, "Enter Administrator Username:");
@@ -190,7 +188,7 @@ public class Menu extends JFrame{
 //					    while(!admin) {
 							if (!adminUsername.equals("admin"))//search admin list for admin with matching admin username
 							{
-								int reply = JOptionPane.showConfirmDialog(null, null, "Incorrect Username. Try again?", JOptionPane.YES_NO_OPTION);
+								int reply = JOptionPane.showConfirmDialog(null, "Incorrect Username. Try again?", "Username Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
 								if (reply == JOptionPane.YES_OPTION) {
 
 								} else if (reply == JOptionPane.NO_OPTION) {
@@ -204,7 +202,7 @@ public class Menu extends JFrame{
 //					    	while (!pass) {
 								if (!adminPassword.equals("admin11"))//search admin list for admin with matching admin password
 								{
-									int reply = JOptionPane.showConfirmDialog(null, null, "Incorrect Password. Try again?", JOptionPane.YES_NO_OPTION);
+									int reply = JOptionPane.showConfirmDialog(null, "Incorrect Password. Try again?", "Password Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
 									if (reply == JOptionPane.YES_OPTION) {
 
 									} else if (reply == JOptionPane.NO_OPTION) {
@@ -247,7 +245,7 @@ public class Menu extends JFrame{
 					    
 					    if(found == false)
 					    {
-					    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
+					    	int reply  = JOptionPane.showConfirmDialog(null, "User not found. Try again?", "Not Found", JOptionPane.YES_NO_OPTION);
 					    	if (reply == JOptionPane.YES_OPTION) {
 					    		loop = true;
 					    	}
@@ -270,9 +268,9 @@ public class Menu extends JFrame{
 					    {
 					    	Object customerPassword = JOptionPane.showInputDialog(mainFrame, "Enter Customer Password;");
 					    	
-					    	   if(!customer.getPassword().equals(customerPassword))//check if custoemr password is correct
+					    	   if(!customer.getPassword().equals(customerPassword))//check if customer password is correct
 							    {
-							    	int reply  = JOptionPane.showConfirmDialog(null, null, "Incorrect password. Try again?", JOptionPane.YES_NO_OPTION);
+							    	int reply  = JOptionPane.showConfirmDialog(null, "Incorrect password. Try again?", "Password Error", JOptionPane.YES_NO_OPTION);
 							    	if (reply == JOptionPane.YES_OPTION) {
 							    		
 							    	}
