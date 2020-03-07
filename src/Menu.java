@@ -184,38 +184,45 @@ public class Menu extends JFrame{
 					//if user select ADMIN----------------------------------------------------------------------------------------------
 					if(user.equals("Administrator")	)
 					{
-						boolean cont = true;
-
-					    Object adminUsername = JOptionPane.showInputDialog(mainFrame, "Enter Administrator Username:");
-
-//					    while(!admin) {
-							if (!adminUsername.equals("admin"))//search admin list for admin with matching admin username
-							{
-								int reply = JOptionPane.showConfirmDialog(null, "Incorrect Username. Try again?", "Username Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
-								if (reply == JOptionPane.YES_OPTION) {
-
-								} else if (reply == JOptionPane.NO_OPTION) {
-									secondaryFrame.dispose();
-									menuStart();
-								}
-							}
+						boolean cont = false;
+                        boolean admin = false;
+                        boolean pass = false;
 
 
-					    	Object adminPassword = JOptionPane.showInputDialog(mainFrame, "Enter Administrator Password;");
-//					    	while (!pass) {
-								if (!adminPassword.equals("admin11"))//search admin list for admin with matching admin password
-								{
-									int reply = JOptionPane.showConfirmDialog(null, "Incorrect Password. Try again?", "Password Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
-									if (reply == JOptionPane.YES_OPTION) {
+				    while(!admin) {
+                        Object adminUsername = JOptionPane.showInputDialog(mainFrame, "Enter Administrator Username:");
+                        if (!adminUsername.equals("admin"))//search admin list for admin with matching admin username
+                        {
+                            int reply = JOptionPane.showConfirmDialog(null, "Incorrect Username. Try again?", "Username Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
+                            if (reply == JOptionPane.YES_OPTION) {
 
-									} else if (reply == JOptionPane.NO_OPTION) {
-										secondaryFrame.dispose();
-										menuStart();
-									}
-								}
+                            } else if (reply == JOptionPane.NO_OPTION) {
+                                mainFrame.dispose();
+                                secondaryFrame.dispose();
+                            }
+                        } else {
+                            admin = true;
+                        }
+                    }
+                                while (!pass) {
+                                    Object adminPassword = JOptionPane.showInputDialog(mainFrame, "Enter Administrator Password;");
+                                    if (!adminPassword.equals("admin11"))//search admin list for admin with matching admin password
+                                    {
+                                        int reply = JOptionPane.showConfirmDialog(null, "Incorrect Password. Try again?", "Password Error", JOptionPane.ERROR_MESSAGE, JOptionPane.YES_NO_OPTION);
+                                        if (reply == JOptionPane.YES_OPTION) {
+
+                                        } else if (reply == JOptionPane.NO_OPTION) {
+                                            pass = true;
+                                            secondaryFrame.dispose();
+                                            menuStart();
+                                        }
+                                    } else {
+                                        cont = true;
+                                        pass = true;
+                                    }
+                                }
 
 
-					    	
 					    if(cont)
 					    {
 						secondaryFrame.dispose();
@@ -392,7 +399,7 @@ public class Menu extends JFrame{
 			    	}					    	
 			    }
 			    
-			    if(found == false)
+			    if(!found)
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.YES_OPTION) {
