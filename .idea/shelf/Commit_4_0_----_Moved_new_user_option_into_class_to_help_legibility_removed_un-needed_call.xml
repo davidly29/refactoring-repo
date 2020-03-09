@@ -1,0 +1,224 @@
+<changelist name="Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call" date="1583769492143" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/shelved.patch" />
+  <option name="DESCRIPTION" value="Commit 4.0 ---- Moved new user option into class to help legibility removed un-needed calls to main frame" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$2.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$3.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$4$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$4$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$4$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$4$2.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$4$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$4$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$4$3.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$4$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$4$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$4.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$5$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$5$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$5$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$5$2.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$5$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$5$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$5$3.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$5.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$6$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$6$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$6$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$6$2.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$6$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$6$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$6$3.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$6$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$6$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$6.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$7$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$7$2.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$7.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$7.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$7.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8$2.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8$3.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8$4.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8$5.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$8.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$8.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$8.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$9.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$9.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$9.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$10.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$10.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$10.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$11.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$11.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$11.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$12.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$12.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$12.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$13.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu$13.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu$13.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$14.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$2$1.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$2$2.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$2.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$3.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$4.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15$5.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu$15.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/Menu.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/Menu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/Menu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/NewUserPage$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/NewUserPage$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/NewUserPage$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/NewUserPage$2$1.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/NewUserPage$2$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/NewUserPage$2$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/NewUserPage$2.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/NewUserPage$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/NewUserPage$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/NewUserPage$3.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/NewUserPage$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/NewUserPage$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/refactoring-assignment/NewUserPage.class" />
+    <option name="AFTER_PATH" value="out/production/refactoring-assignment/NewUserPage.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_4_0_----_Moved_new_user_option_into_class_to_help_legibility_removed_un-needed_call/NewUserPage.class" />
+  </binary>
+</changelist>

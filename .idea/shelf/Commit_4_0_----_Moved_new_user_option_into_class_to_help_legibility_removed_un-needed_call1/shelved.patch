@@ -1,0 +1,16 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Default ignored files\r\n/workspace.xml
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1583587256000)
++++ .idea/.gitignore	(date 1583769494063)
+@@ -1,2 +1,3 @@
+ # Default ignored files
+-/workspace.xml
+\ No newline at end of file
++/workspace.xml
++/shelf/
+\ No newline at end of file
