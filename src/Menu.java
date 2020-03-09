@@ -107,7 +107,7 @@ public class Menu extends JFrame{
 	}
 	
 	public void administrator() {
-		boolean cont = false;
+		boolean goContinue = false;
 		boolean admin = false;
 		boolean pass = false;
 
@@ -140,13 +140,13 @@ public class Menu extends JFrame{
 					menuStart();
 				}
 			} else {
-				cont = true;
+				goContinue = true;
 				pass = true;
 			}
 		}
 
 
-		if(cont)
+		if(goContinue)
 		{
 			secondaryFrame.dispose();
 			admin();
@@ -156,7 +156,7 @@ public class Menu extends JFrame{
 	public void customer() {
 		boolean customerParam = false;
 		boolean customerPass = false;
-		boolean cont = false;
+		boolean goContinue = false;
 		Customer customer = null;
 
 
@@ -196,11 +196,11 @@ public class Menu extends JFrame{
 				}
 			} else {
 				customerPass = true;
-				cont = true;
+				goContinue = true;
 			}
 		}
 
-		if(cont)
+		if(goContinue)
 		{
 			mainFrame.dispose();
 			// loop = false;
@@ -242,20 +242,12 @@ public class Menu extends JFrame{
 
 		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-
 				PPS = pPSTextField.getText();
 				firstName = firstNameTextField.getText();
 				surname = surnameTextField.getText();
 				DOB = dOBTextField.getText();
 				password = "";
-
 				CustomerID = "ID"+PPS ;
-
-
-
-
-
 
 				add.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -272,12 +264,8 @@ public class Menu extends JFrame{
 							}
 						}
 
-
-
-
 						ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 						Customer customer = new Customer(PPS, surname, firstName, DOB, CustomerID, password, accounts);
-
 						customerList.add(customer);
 
 						JOptionPane.showMessageDialog(mainFrame, "CustomerID = " + CustomerID +"\n Password = " + password  ,"Customer created.",  JOptionPane.INFORMATION_MESSAGE);
@@ -297,10 +285,8 @@ public class Menu extends JFrame{
 
 		panel2.add(add);
 		panel2.add(cancel);
-
 		content.add(panel, BorderLayout.CENTER);
 		content.add(panel2, BorderLayout.SOUTH);
-
 		secondaryFrame.setVisible(true);
 	}
 
@@ -372,15 +358,11 @@ public class Menu extends JFrame{
 		content.add(navigatePanel);
 		content.add(summaryPanel);	
 		content.add(deleteCustomerPanel);
-	//	content.add(deleteAccountPanel);
 		content.add(returnPanel);
 		
 		
 		bankChargesButton.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
-				
-				boolean loop = true;
-				
 				boolean found = false;
 			
 				if(customerList.isEmpty())
@@ -392,7 +374,7 @@ public class Menu extends JFrame{
 				}
 				else
 				{
-			    while(loop)
+			    while(!found)
 			    {
 			    Object customerID = JOptionPane.showInputDialog(mainFrame, "Customer ID of Customer You Wish to Apply Charges to:");
 			    
@@ -402,7 +384,7 @@ public class Menu extends JFrame{
 			    	{
 			    		found = true;
 			    		customer = aCustomer; 
-			    		loop = false;
+
 			    	}					    	
 			    }
 			    
@@ -410,13 +392,12 @@ public class Menu extends JFrame{
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.YES_OPTION) {
-			    		loop = true;
+			    		found = false;
 			    	}
 			    	else if(reply == JOptionPane.NO_OPTION)
 			    	{
 			    		mainFrame.dispose();
-			    		loop = false;
-			    	
+			    		found = true;
 			    		admin();
 			    	}
 			    }  
@@ -551,7 +532,7 @@ public class Menu extends JFrame{
 			    	}					    	
 			    }
 			    
-			    if(found == false)
+			    if(!found)
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.YES_OPTION) {
@@ -673,9 +654,7 @@ public class Menu extends JFrame{
 		
 		editCustomerButton.addActionListener(new ActionListener(  ) {
 			public void actionPerformed(ActionEvent ae) {
-				
 				boolean loop = true;
-			
 				boolean found = false;
 			
 				if(customerList.isEmpty())
@@ -701,7 +680,7 @@ public class Menu extends JFrame{
 			    	}					    	
 			    }
 			    
-			    if(found == false)
+			    if(!found)
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.YES_OPTION) {
@@ -719,7 +698,6 @@ public class Menu extends JFrame{
 			    {
 			    	loop = false;
 			    }
-			   
 			    }
 				
 				mainFrame.dispose();
@@ -910,7 +888,6 @@ public class Menu extends JFrame{
 				else
 				{
 				boolean loop = true;
-
 				boolean found = false;
 			
 			    while(loop)
@@ -926,7 +903,7 @@ public class Menu extends JFrame{
 			    	}					    	
 			    }
 			    
-			    if(found == false)
+			    if(!found)
 			    {
 			    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 			    	if (reply == JOptionPane.YES_OPTION) {
@@ -1006,18 +983,18 @@ public class Menu extends JFrame{
 				{
 					 {
 						    Object customerID = JOptionPane.showInputDialog(mainFrame, "Customer ID of Customer You Wish to Delete:");
-						    
+
 						    for (Customer aCustomer: customerList){
-						    	
+
 						    	if(aCustomer.getCustomerID().equals(customerID))
 						    	{
 						    		found = true;
-						    		customer = aCustomer; 
+						    		customer = aCustomer;
 						    		loop = false;
 						    	}					    	
 						    }
 						    
-						    if(found == false)
+						    if(!found)
 						    {
 						    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 						    	if (reply == JOptionPane.YES_OPTION) {
@@ -1065,7 +1042,7 @@ public class Menu extends JFrame{
 						    	}					    	
 						    }
 						    
-						    if(found == false)
+						    if(!found)
 						    {
 						    	int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 						    	if (reply == JOptionPane.YES_OPTION) {
@@ -1262,7 +1239,6 @@ public class Menu extends JFrame{
 		if(loggedInCustomer.getAccounts().size() <= 0)
 		{
 			JOptionPane.showMessageDialog(mainFrame, "This customer does not have any accounts yet. \n An admin must create an account for this customer \n for them to be able to use customer functionality. " ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
-//			mainFrame.dispose();
 			menuStart();
 		}
 		else
@@ -1273,7 +1249,6 @@ public class Menu extends JFrame{
 	
 	public static boolean isNumeric(String str)  // a method that tests if a string is numeric
 	{
-		// null or empty
 		if (str == null || str.length() == 0) {
 			return false;
 		}
@@ -1315,10 +1290,6 @@ public class Menu extends JFrame{
 				}
 			}
 
-
-
-
-
 			boxPanel.add(box);
 			content = mainFrame.getContentPane();
 			content.setLayout(new GridLayout(3, 1));
@@ -1329,7 +1300,6 @@ public class Menu extends JFrame{
 			returnButton.addActionListener(new ActionListener(  ) {
 				public void actionPerformed(ActionEvent ae) {
 					mainFrame.dispose();
-					menuStart();
 				}
 			});
 
@@ -1474,16 +1444,13 @@ public class Menu extends JFrame{
 								}
 
 
-							}		if(on == true)
+							}		if(on)
 							{
 								String balanceTest = JOptionPane.showInputDialog(mainFrame, "Enter amount you wish to lodge:");//the isNumeric method tests to see if the string entered was numeric.
 								if(isNumeric(balanceTest))
 								{
-
 									balance = Double.parseDouble(balanceTest);
 									loop = false;
-
-
 								}
 								else
 								{
@@ -1561,17 +1528,13 @@ public class Menu extends JFrame{
 
 
 
-							}		if(on == true)
-							{
+							}
+							if(on) {
 								String balanceTest = JOptionPane.showInputDialog(mainFrame, "Enter amount you wish to withdraw (max 500):");//the isNumeric method tests to see if the string entered was numeric.
 								if(isNumeric(balanceTest))
 								{
-
 									withdraw = Double.parseDouble(balanceTest);
 									loop = false;
-
-
-
 								}
 								else
 								{
@@ -1598,18 +1561,12 @@ public class Menu extends JFrame{
 								String type = "Withdraw";
 								double amount = withdraw;
 
-
 								AccountTransaction transaction = new AccountTransaction(date2, type, amount);
 								acc.getTransactionList().add(transaction);
-
-
 
 								JOptionPane.showMessageDialog(mainFrame, withdraw + euro + " withdrawn." ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
 								JOptionPane.showMessageDialog(mainFrame, "New balance = " + acc.getBalance() + euro ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
 							}
-
-
-
 						}
 					});
 
