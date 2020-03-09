@@ -252,23 +252,12 @@ public class Menu extends JFrame{
 				add.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						secondaryFrame.dispose();
-						boolean passwordCheck = false;
-
-						while (!passwordCheck) {
-							password = JOptionPane.showInputDialog(mainFrame, "Enter 7 character Password;");
-
-							if (password.length() < 7) {
-								JOptionPane.showMessageDialog(null, "Password must be at least 7 characters long", "Password Error", JOptionPane.OK_OPTION);
-							}else {
-								passwordCheck = true;
-							}
-						}
-
 						ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 						Customer customer = new Customer(PPS, surname, firstName, DOB, CustomerID, password, accounts);
+						Customer.validateCustomer(customer);
 						customerList.add(customer);
 
-						JOptionPane.showMessageDialog(mainFrame, "CustomerID = " + CustomerID +"\n Password = " + password  ,"Customer created.",  JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(mainFrame, "CustomerID = " + customer.customerID +"\n Password = " + customer.password  ,"Customer created.",  JOptionPane.INFORMATION_MESSAGE);
 						mainFrame.dispose();
 						menuStart();
 					}

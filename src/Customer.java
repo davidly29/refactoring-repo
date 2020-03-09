@@ -1,4 +1,5 @@
-import java.util.ArrayList; 
+import javax.swing.*;
+import java.util.ArrayList;
 
 public class Customer {
 
@@ -118,6 +119,23 @@ public class Customer {
 				+ "Date of Birth = " + this.DOB + "\n"
 				+ "Customer ID = " + this.customerID;
 			
+	}
+
+	public static Customer validateCustomer(Customer customerToValidate) {
+		boolean passwordCheck = false;
+		while (!passwordCheck) {
+			customerToValidate.password = JOptionPane.showInputDialog(null, "Enter 7 character Password;");
+
+			if (customerToValidate.password.length() < 7) {
+				JOptionPane.showMessageDialog(null, "Password must be at least 7 characters long", "Password Error", JOptionPane.OK_OPTION);
+			}else {
+				passwordCheck = true;
+			}
+		}
+
+		ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
+		customerToValidate.setAccounts(accounts);
+		return customerToValidate;
 	}
 	
 }
