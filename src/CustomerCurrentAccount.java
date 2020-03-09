@@ -83,4 +83,22 @@ public static boolean validateAccount(CustomerAccount acc) {
 		JOptionPane.showMessageDialog(null, "New balance = " + acc.getBalance() + euro ,"Lodgement",  JOptionPane.INFORMATION_MESSAGE);
 	}
 
+	public static void withdraw(CustomerAccount acc, double withdraw) {
+		String euro = "\u20ac";
+		acc.setBalance(acc.getBalance()-withdraw);
+		//recording transaction:
+		//		String date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+		Date date = new Date();
+		String date2 = date.toString();
+
+		String type = "Withdraw";
+		double amount = withdraw;
+
+		AccountTransaction transaction = new AccountTransaction(date2, type, amount);
+		acc.getTransactionList().add(transaction);
+
+		JOptionPane.showMessageDialog(null, withdraw + euro + " withdrawn." ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "New balance = " + acc.getBalance() + euro ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
+	}
+
 }
