@@ -121,7 +121,7 @@ public class Customer {
 			
 	}
 
-	public static Customer validateCustomer(Customer customerToValidate) {
+	public static Customer validateNewCustomer(Customer customerToValidate) {
 		boolean passwordCheck = false;
 		while (!passwordCheck) {
 			customerToValidate.password = JOptionPane.showInputDialog(null, "Enter 7 character Password;");
@@ -136,6 +136,50 @@ public class Customer {
 		ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 		customerToValidate.setAccounts(accounts);
 		return customerToValidate;
+	}
+
+	public static Customer validateExistingCustomer(ArrayList<Customer> customerList) {
+		boolean customerParam = false;
+		boolean customerPass = false;
+		Customer customer = null;
+
+		while (!customerParam) {
+			Object customerID = JOptionPane.showInputDialog(null, "Enter Customer ID:");
+
+			for (Customer aCustomer : customerList) {
+				if (aCustomer.getCustomerID().equals(customerID))//search customer list for matching customer ID
+				{
+					customerParam = true;
+					customer = aCustomer;
+				} else {
+					int reply = JOptionPane.showConfirmDialog(null, "User not found. Try again?", "Not Found", JOptionPane.YES_NO_OPTION);
+					if (reply == JOptionPane.YES_OPTION) {
+
+					} else if (reply == JOptionPane.NO_OPTION) {
+						customerParam = true;
+						customerPass = true;
+//						mainFrame.dispose();
+//						menuStart();
+					}
+				}
+			}
+		}
+		while(!customerPass)
+		{
+			Object customerPassword = JOptionPane.showInputDialog(null, "Enter Customer Password");
+
+			if(!customer.getPassword().equals(customerPassword))//check if customer password is correct
+			{
+				int reply  = JOptionPane.showConfirmDialog(null, "Incorrect password. Try again?", "Password Error", JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+				}
+				else if(reply == JOptionPane.NO_OPTION){
+				}
+				} else {
+					customerPass = true;
+				}
+		}
+		return customer;
 	}
 	
 }

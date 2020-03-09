@@ -116,53 +116,9 @@ public class Menu extends JFrame{
 	}
 
 	public void customer() {
-		boolean customerParam = false;
-		boolean customerPass = false;
-		boolean goContinue = false;
-		Customer customer = null;
+		Customer customer = Customer.validateExistingCustomer(customerList);
 
-
-		while (!customerParam) {
-			Object customerID = JOptionPane.showInputDialog(mainFrame, "Enter Customer ID:");
-
-			for (Customer aCustomer : customerList) {
-				if (aCustomer.getCustomerID().equals(customerID))//search customer list for matching customer ID
-				{
-					customerParam = true;
-					customer = aCustomer;
-				} else {
-					int reply = JOptionPane.showConfirmDialog(null, "User not found. Try again?", "Not Found", JOptionPane.YES_NO_OPTION);
-					if (reply == JOptionPane.YES_OPTION) {
-
-					} else if (reply == JOptionPane.NO_OPTION) {
-						customerParam = true;
-						mainFrame.dispose();
-						menuStart();
-					}
-				}
-			}
-		}
-
-		while(!customerPass)
-		{
-			Object customerPassword = JOptionPane.showInputDialog(mainFrame, "Enter Customer Password");
-
-			if(!customer.getPassword().equals(customerPassword))//check if customer password is correct
-			{
-				int reply  = JOptionPane.showConfirmDialog(null, "Incorrect password. Try again?", "Password Error", JOptionPane.YES_NO_OPTION);
-				if (reply == JOptionPane.YES_OPTION) {
-				}
-				else if(reply == JOptionPane.NO_OPTION){
-					mainFrame.dispose();
-					menuStart();
-				}
-			} else {
-				customerPass = true;
-				goContinue = true;
-			}
-		}
-
-		if(goContinue)
+		if(customer != null)
 		{
 			mainFrame.dispose();
 			// loop = false;
@@ -216,7 +172,7 @@ public class Menu extends JFrame{
 						secondaryFrame.dispose();
 						ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 						Customer customer = new Customer(PPS, surname, firstName, DOB, CustomerID, password, accounts);
-						Customer.validateCustomer(customer);
+						Customer.validateNewCustomer(customer);
 						customerList.add(customer);
 
 						JOptionPane.showMessageDialog(mainFrame, "CustomerID = " + customer.customerID +"\n Password = " + customer.password  ,"Customer created.",  JOptionPane.INFORMATION_MESSAGE);
@@ -1190,6 +1146,7 @@ public class Menu extends JFrame{
 		if(loggedInCustomer.getAccounts().size() <= 0)
 		{
 			JOptionPane.showMessageDialog(mainFrame, "This customer does not have any accounts yet. \n An admin must create an account for this customer \n for them to be able to use customer functionality. " ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
+			mainFrame.dispose();
 			menuStart();
 		}
 		else
