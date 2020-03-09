@@ -27,9 +27,6 @@ public class Menu extends JFrame {
     }
 
     public void menuStart() {
-		   /*The menuStart method asks the user if they are a new customer, an existing customer or an admin. It will then start the create customer process
-		  if they are a new customer, or will ask them to log in if they are an existing customer or admin.*/
-
         mainFrame = new JFrame("User Type");
         mainFrame.setSize(400, 300);
         mainFrame.setLocation(200, 200);
@@ -1211,7 +1208,7 @@ public class Menu extends JFrame {
                         }
 
                         if (on) {
-                            String balanceTest = JOptionPane.showInputDialog(mainFrame, "Enter amount you wish to withdraw (max 500):");//the isNumeric method tests to see if the string entered was numeric.
+                            String balanceTest = JOptionPane.showInputDialog(mainFrame, "Enter amount you wish to withdraw (max 500):");
                             if (isNumeric(balanceTest)) {
                                 withdraw = Double.parseDouble(balanceTest);
                             } else {
